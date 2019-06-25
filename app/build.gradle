@@ -1,9 +1,9 @@
 apply plugin: 'com.android.application'
 
 def getSlackHookUrl(){
-    def webhook = System.getenv('SLACK_STATUS_HOOK');
+    def webhook = System.getenv('SLACKIFY_STATUS_HOOK');
     if(webhook == null || webhook == "") {
-        return SLACK_STATUS_HOOK;
+        return SLACKIFY_STATUS_HOOK;
     } else {
         return webhook;
     }
@@ -21,7 +21,7 @@ android {
     }
     buildTypes {
         debug{
-            buildConfigField("String", "SLACK_STATUS_HOOK",  "\""+ getSlackHookUrl() +"\"")
+            buildConfigField("String", "SLACKIFY_STATUS_HOOK",  "\""+ getSlackHookUrl() +"\"")
         }
         release {
             minifyEnabled false
