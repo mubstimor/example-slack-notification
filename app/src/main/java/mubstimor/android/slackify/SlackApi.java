@@ -18,6 +18,6 @@ public interface SlackApi {
      * @return body this is usually a string
      */
     @FormUrlEncoded
-    @POST(BuildConfig.SLACK_STATUS_HOOK)
+    @POST(BuildConfig.SLACKIFY_STATUS_HOOK)
     Call<ResponseBody> postSlackMessage(@Field("payload") String slackNotificationMessage);
 }
